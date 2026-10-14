@@ -1,8 +1,8 @@
 # Nexluna: Code Orbit — Privacy Policy
 
-Last updated: 2026-10-11
+Last updated: 2026-10-14
 
-Nexluna: Code Orbit ("the game") is developed by Alessio Montuoro.
+Nexluna: Code Orbit ("the game") is developed by Classic Forest Games.
 
 ## Data collection and sharing
 
@@ -40,4 +40,4 @@ privacy-policy URL listed on Google Play.
 
 ## Contact
 
-For privacy questions, contact Alessio Montuoro at classic.forest.games@gmail.com.
+For privacy questions, contact Classic Forest Games at classic.forest.games@gmail.com.
