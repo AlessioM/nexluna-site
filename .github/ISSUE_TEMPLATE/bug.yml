@@ -1,0 +1,41 @@
+name: Bug report
+description: Something in Nexluna doesn't work, crashes or looks wrong
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for testing Nexluna! Please don't paste anything private — this page is public.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How can we make it happen again?
+      placeholder: "1. Open level 3-2\n2. Launch with ...\n3. ..."
+  - type: input
+    id: level
+    attributes:
+      label: Level or screen
+      placeholder: e.g. 4-4 Crowded Sky, Versus, Settings
+  - type: input
+    id: device
+    attributes:
+      label: Phone and Android version
+      placeholder: e.g. Pixel 8 Pro, Android 16
+  - type: input
+    id: version
+    attributes:
+      label: Game version
+      description: Shown on the Google Play page or in Android Settings → Apps → Nexluna.
+      placeholder: e.g. 0.1.0
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshot, share code or anything else
+      description: Drag screenshots in here. A level-solution or challenge code helps reproduce battle bugs.

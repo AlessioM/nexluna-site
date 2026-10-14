@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Email instead
+    url: mailto:classic.forest.games@gmail.com
+    about: No GitHub account? Send feedback by email.

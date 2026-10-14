@@ -1,10 +1,196 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nexluna: Code Orbit</title>
-<style>body{font:16px/1.6 system-ui,sans-serif;max-width:42rem;margin:2rem auto;padding:0 16px;color:#1b1f24;background:#fff}
-@media (prefers-color-scheme:dark){body{color:#e6e8eb;background:#11151a}a{color:#7cc4ff}}</style></head>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nexluna: Code Orbit — program your spaceship</title>
+<meta name="description" content="A programming strategy game for Android: snap together code blocks, launch your ship into a gravity well and watch your program fight. Free, no ads, offline.">
+<meta name="theme-color" content="#0d0f33">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nexluna: Code Orbit">
+<meta property="og:description" content="You never fly your ship — you program it. Code blocks, orbital physics, curving bullets.">
+<meta property="og:image" content="https://alessiom.github.io/nexluna-site/img/og.png">
+<meta property="og:url" content="https://alessiom.github.io/nexluna-site/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonts/Nunito.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
 <body>
-<h1>Nexluna: Code Orbit</h1>
-<p>An orbital programming strategy game for Android.</p>
-<p><a href="privacy/">Privacy policy</a> · Support: <a href="mailto:classic.forest.games@gmail.com">classic.forest.games@gmail.com</a></p>
-</body></html>
+<canvas id="space" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Nexluna: Code Orbit, back to top">
+    <img src="img/icon-192.png" alt="" width="36" height="36">
+    <span>Nexluna</span>
+  </a>
+  <nav aria-label="Sections">
+    <a href="#how">How it plays</a>
+    <a href="#screens">Screens</a>
+    <a href="#features">Features</a>
+  </nav>
+  <a class="btn btn-small" href="#beta">Join the beta</a>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Nexluna: Code Orbit · Android beta</p>
+      <h1>You never fly your ship.<br><span class="grad">You program it.</span></h1>
+      <p class="lede">Snap together code blocks, launch into a gravity well full of rival ships and watch
+        your program fight. Every burn bends your orbit. Every shot curves around the planet.</p>
+      <div class="cta-row">
+        <a class="btn" href="#beta">Join the Android beta</a>
+        <a class="btn btn-ghost" href="#how">See how it plays</a>
+      </div>
+      <ul class="badges" aria-label="Highlights">
+        <li>Free</li><li>No ads</li><li>No account</li><li>Works offline</li>
+      </ul>
+    </div>
+    <a class="scroll-hint" href="#how" aria-label="Scroll to how it plays"><span></span></a>
+  </section>
+
+  <section id="how" class="section how">
+    <div class="how-grid">
+      <div class="program reveal" aria-label="Example ship program">
+        <div class="program-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="prog-title">my_ship</span></div>
+        <div class="blocks" id="blocks">
+          <div class="b hat ctl">when match starts</div>
+          <div class="b mot">point <i>prograde ▾</i></div>
+          <div class="b mot">thrust <i class="v">100</i> %</div>
+          <div class="b ctl">wait <i class="v">0.3</i> s</div>
+          <div class="b mot">stop engine</div>
+          <div class="c ctl">
+            <div class="b c-top">forever</div>
+            <div class="c-body">
+              <div class="c ctl">
+                <div class="b c-top">if <i class="op"><i class="sen">altitude</i> &lt; <i class="v">120</i></i></div>
+                <div class="c-body">
+                  <div class="b mot">point <i>radial out ▾</i></div>
+                  <div class="b mot">thrust <i class="v">100</i> %</div>
+                </div>
+                <div class="b c-mid">else</div>
+                <div class="c-body">
+                  <div class="b mot">point at <i class="sen">nearest enemy</i></div>
+                  <div class="b cmb">fire</div>
+                  <div class="b ctl">wait <i class="v">0.5</i> s</div>
+                </div>
+                <div class="c-end"></div>
+              </div>
+            </div>
+            <div class="c-end"></div>
+          </div>
+        </div>
+      </div>
+      <div class="how-copy">
+        <h2 class="reveal">From blocks to battle</h2>
+        <ol class="steps">
+          <li class="reveal"><span class="num">1</span><div><h3>Build</h3><p>Drag motion, sensing, operator, control and combat blocks into a program. No typing, no syntax errors — just ideas.</p></div></li>
+          <li class="reveal"><span class="num">2</span><div><h3>Launch</h3><p>Your ship enters orbit and runs your code on its own. You can't steer it anymore. Gravity, fuel and ammo are all that matter now.</p></div></li>
+          <li class="reveal"><span class="num">3</span><div><h3>Watch &amp; refine</h3><p>Active blocks light up while the battle runs. Pause, speed up or scrub the replay to see exactly why your plan worked — or flew into a planet.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="screens" class="section screens">
+    <h2 class="reveal center">See it in action</h2>
+    <p class="sub center reveal">Real captures from the game. Tap any screenshot to enlarge.</p>
+    <figure class="hero-shot reveal">
+      <button class="shot" data-i="0" aria-label="Enlarge: live code beside an orbital battle">
+        <img src="img/screens/03_live_code_replay.webp" width="1600" height="900" alt="Live code runs beside an orbital battle, with ship status and replay controls visible.">
+      </button>
+    </figure>
+    <div class="gallery" id="gallery">
+      <!-- filled by main.js from SHOTS so captions and the lightbox stay in sync -->
+    </div>
+  </section>
+
+  <section class="chapters" aria-label="Campaign chapters">
+    <div class="marquee"><div class="track" id="track"></div></div>
+  </section>
+
+  <section id="features" class="section features">
+    <h2 class="reveal center">Everything in orbit</h2>
+    <div class="cards">
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17l-6.1 3.4 1.5-6.8L2.2 9l6.9-.7z"/></svg>
+        <h3>50-level campaign</h3>
+        <p>Ten chapters teach one idea at a time — from staying alive to bent bullets, moons, squads and champions. Earn up to three stars per level.</p>
+      </article>
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="11" height="4" rx="1.5"/><rect x="6" y="10" width="13" height="4" rx="1.5"/><rect x="6" y="16" width="9" height="4" rx="1.5"/></svg>
+        <h3>Watch your program think</h3>
+        <p>The running block glows during the match. Pause, play at 2×, fit the arena on screen or scrub back through a replay.</p>
+      </article>
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10" ry="4.5" fill="none" stroke-width="1.6" transform="rotate(-25 12 12)"/></svg>
+        <h3>Real orbital physics</h3>
+        <p>Every burn changes your orbit and shells fall under gravity too. Moons, crowded arenas, scarce fuel and a shrinking sudden-death ring keep it fresh.</p>
+      </article>
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H9l-5 4z"/></svg>
+        <h3>Challenge your friends</h3>
+        <p>Build an arena ship and send its challenge code through any messenger. Matches are deterministic: same ships, same result on every device.</p>
+      </article>
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v4a5 5 0 0 1-10 0zM4 5h3v2a3 3 0 0 1-3-2zM20 5h-3v2a3 3 0 0 0 3-2zM10 14h4v3h3v3H7v-3h3z"/></svg>
+        <h3>AI tournaments</h3>
+        <p>Throw your ship into round-robin tournaments against imported rivals and built-in champions, then replay any match from the table.</p>
+      </article>
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/></svg>
+        <h3>Private by design</h3>
+        <p>No ads, no account, no tracking. The game doesn't even request internet access — everything stays on your phone.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="beta" class="section beta">
+    <div class="beta-card reveal">
+      <p class="eyebrow">Closed testing on Google Play</p>
+      <h2>Join the beta in two steps</h2>
+      <p>Nexluna is in closed testing before its Play Store launch. Use the same Google account for both steps and on your Android phone.</p>
+      <ol class="join">
+        <li><span class="num">1</span><div><h3>Join the tester group</h3><p>Google uses this group to let you in.</p>
+          <a class="btn" href="https://groups.google.com/g/nexluna-testers" rel="noopener">Join the group</a></div></li>
+        <li><span class="num">2</span><div><h3>Opt in &amp; install</h3><p>Accept the invite, then install from Google Play.</p>
+          <a class="btn" href="https://play.google.com/apps/testing/com.nexluna.game" rel="noopener">Become a tester</a></div></li>
+      </ol>
+      <div class="report">
+        <div><h3>Found a bug? Stuck on a level?</h3>
+          <p>Report it on GitHub — or browse what others have already found.</p></div>
+        <div class="report-btns">
+          <a class="btn btn-small" href="https://github.com/AlessioM/nexluna-site/issues/new?template=bug.yml" rel="noopener">Report a bug</a>
+          <a class="btn btn-small btn-ghost" href="https://github.com/AlessioM/nexluna-site/issues/new?template=feedback.yml" rel="noopener">Share feedback</a>
+          <a class="btn btn-small btn-ghost" href="https://github.com/AlessioM/nexluna-site/issues" rel="noopener">All issues</a>
+        </div>
+      </div>
+      <p class="fine">Please stay opted in for at least 14 days — it's how a new game earns its place on Google Play.
+        No GitHub account? Feedback is just as welcome at
+        <a href="mailto:classic.forest.games@gmail.com">classic.forest.games@gmail.com</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-brand"><img src="img/icon-192.png" alt="" width="28" height="28"> Nexluna: Code Orbit</div>
+  <nav aria-label="Footer">
+    <a href="privacy/">Privacy policy</a>
+    <a href="https://github.com/AlessioM/nexluna-site/issues" rel="noopener">Report an issue</a>
+    <a href="mailto:classic.forest.games@gmail.com">Contact</a>
+  </nav>
+  <p>© 2026 Classic Forest Games · Nunito font under the <a href="fonts/OFL.txt">SIL Open Font License</a></p>
+</footer>
+
+<dialog id="lightbox" aria-label="Screenshot viewer">
+  <button class="lb-close" aria-label="Close">×</button>
+  <button class="lb-nav lb-prev" aria-label="Previous screenshot">‹</button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="lb-nav lb-next" aria-label="Next screenshot">›</button>
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>

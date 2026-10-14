@@ -1,0 +1,29 @@
+name: Feedback
+description: Difficulty, ideas, confusing levels, things you loved or hated
+title: "[Feedback] "
+labels: [feedback]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of feedback?
+      options:
+        - A level is too hard / unfair
+        - A level is too easy
+        - Something was confusing
+        - Block editor / controls
+        - Idea or feature request
+        - General impressions
+    validations:
+      required: true
+  - type: input
+    id: level
+    attributes:
+      label: Level (if any)
+      placeholder: e.g. 6-3
+  - type: textarea
+    id: details
+    attributes:
+      label: Tell us more
+    validations:
+      required: true
