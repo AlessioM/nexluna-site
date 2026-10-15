@@ -290,3 +290,23 @@ const SHOTS = [
   }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
   document.querySelectorAll(".reveal").forEach((el, i) => { el.style.transitionDelay = `${(i % 3) * 80}ms`; io.observe(el); });
 })();
+
+/* ------------------------------------------------------------------
+ * Play in browser: load the game only on demand (it's ~10 MB). Small
+ * touch screens get the full-page build instead of an embedded frame.
+ * ------------------------------------------------------------------ */
+(() => {
+  const btn = document.getElementById("play-btn"), player = document.getElementById("player");
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    const small = window.matchMedia("(pointer: coarse)").matches && Math.min(screen.width, screen.height) < 700;
+    if (small) { window.location.href = "play/"; return; }
+    const frame = document.createElement("iframe");
+    frame.src = "play/";
+    frame.title = "Nexluna: Code Orbit";
+    frame.allow = "fullscreen; clipboard-read; clipboard-write; autoplay";
+    player.appendChild(frame);
+    btn.remove();
+    frame.addEventListener("load", () => frame.focus());
+  });
+})();

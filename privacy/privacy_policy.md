@@ -1,6 +1,6 @@
 # Nexluna: Code Orbit — Privacy Policy
 
-Last updated: 2026-10-14
+Last updated: 2026-10-15
 
 Nexluna: Code Orbit ("the game") is developed by Classic Forest Games.
 
@@ -17,10 +17,22 @@ When you choose to copy or paste a challenge code, the game uses your device cli
 code contains the pilot name and ship program chosen by its creator. The game does not transmit
 the code: you decide whether and where to send it using another app.
 
+## Browser version
+
+The game can also be played in a web browser at https://alessiom.github.io/nexluna-site/play/.
+The browser version stores the same game data in your browser's local storage (IndexedDB) on your
+device; it is not sent to the developer. When you use a Paste or Import button, the browser may ask
+for permission to read your clipboard; the game only reads it at that moment.
+
+The website and the browser version are hosted on GitHub Pages. Like any web host, GitHub may
+process technical data such as your IP address to deliver and secure the site; see the GitHub
+Privacy Statement (https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement).
+The website and the browser version use no cookies, analytics, or third-party trackers.
+
 ## Retention and deletion
 
 Local game data remains on your device until you reset progress in the game, clear the app's data,
-or uninstall the game. Because the developer never receives this data, there is no server-side
+uninstall the game, or (browser version) clear the site data in your browser. Because the developer never receives this data, there is no server-side
 copy to retrieve or delete.
 
 ## Security
