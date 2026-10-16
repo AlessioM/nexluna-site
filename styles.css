@@ -186,10 +186,16 @@ p { margin: 0; }
 .ctl, .ctl > .b { background: var(--blk-ctl); }
 .mot { background: var(--blk-mot); }
 .cmb { background: var(--blk-cmb); }
-.c { border-radius: 12px; padding: 0; background: var(--blk-ctl); display: flex; flex-direction: column; align-items: flex-start; }
-.c .c-top, .c .c-mid { border-radius: 10px; }
-.c-body { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; margin: 2px 0 2px 16px; padding: 4px 6px 4px 0; background: rgba(22, 27, 75, .92); border-radius: 0 10px 10px 0; }
-.c-end { height: 12px; width: 110px; background: var(--blk-ctl); border-radius: 0 0 10px 10px; }
+/* C-blocks (forever / if-else) drawn like Scratch: top bar, left arm, foot; the inside stays
+   transparent so nested bodies never show stray orange or a second, darker panel. */
+.c { padding: 0; background: none; display: flex; flex-direction: column; align-items: flex-start; }
+.c .c-top { border-radius: 10px 10px 10px 0; }
+.c .c-mid { border-radius: 0 10px 10px 0; }
+.c-body {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  padding: 4px 0 4px 6px; border-left: 16px solid var(--blk-ctl);
+}
+.c-end { height: 14px; width: 110px; background: var(--blk-ctl); border-radius: 0 10px 10px 10px; }
 .b.active { filter: brightness(1.18); transform: translateX(6px); box-shadow: 0 0 0 3px #fff, 0 0 24px 4px rgba(255, 255, 255, .55); }
 .steps, .join { list-style: none; margin: 34px 0 0; padding: 0; display: grid; gap: 26px; }
 .steps li, .join li { display: flex; gap: 18px; align-items: flex-start; }
