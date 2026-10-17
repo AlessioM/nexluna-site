@@ -361,6 +361,21 @@ dialog#lightbox figcaption { text-align: center; color: var(--muted); margin-top
   .reveal { opacity: 1; transform: none; }
 }
 
+/* ---------- credits ---------- */
+.credit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.credit {
+  padding: 26px; border-radius: var(--radius);
+  background: rgba(28, 34, 87, .82); border: 1px solid var(--line);
+}
+.credit .eyebrow { margin-bottom: 10px; font-size: 12px; }
+.credit h3 a { color: var(--text); text-decoration-color: rgba(238, 240, 255, .35); text-underline-offset: 4px; }
+.credit h3 a:hover { color: var(--gold); }
+.credit .by { color: var(--muted); margin: 6px 0 12px; font-size: 15px; }
+.credit .by a, .credit .lic a { color: var(--cyan); }
+.credit p { color: var(--muted); font-size: 16px; }
+.credit .lic { margin-top: 10px; font-size: 14px; opacity: .85; }
+@media (max-width: 640px) { .credit-grid { grid-template-columns: 1fr; } }
+
 /* ---------- more games (cross-links to the studio's other sites) ---------- */
 .game-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto; }
 .game-card { display: flex; flex-direction: column; border-radius: var(--radius); overflow: hidden; background: var(--panel); border: 1px solid var(--line); transition: transform .3s, border-color .3s; }
