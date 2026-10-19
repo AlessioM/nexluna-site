@@ -82,6 +82,8 @@ p { margin: 0; }
 .nav nav { display: flex; gap: 22px; margin-left: auto; }
 .nav nav a { color: var(--muted); text-decoration: none; font-weight: 700; font-size: 15px; transition: color .2s; }
 .nav nav a:hover { color: var(--text); }
+.nav-cta { display: flex; gap: 8px; flex: none; }
+.nav-cta .narrow { display: none; }
 
 /* ---------- buttons ---------- */
 .btn {
@@ -303,7 +305,7 @@ p { margin: 0; }
 .foot { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; padding: 40px 0 50px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 14px 30px; align-items: center; color: var(--muted); font-size: 14px; }
 .foot-brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-weight: 800; font-size: 16px; }
 .foot-brand img { border-radius: 8px; }
-.foot nav { display: flex; gap: 20px; }
+.foot nav { display: flex; flex-wrap: wrap; gap: 10px 20px; }
 .foot nav a { color: var(--text); text-decoration: none; font-weight: 700; }
 .foot p { width: 100%; }
 .foot p a { color: var(--muted); }
@@ -344,7 +346,7 @@ dialog#lightbox figcaption { text-align: center; color: var(--muted); margin-top
   body { font-size: 16px; }
   .nav { gap: 10px; }
   .nav nav { display: none; }
-  .nav .btn-small { margin-left: auto; }
+  .nav-cta { margin-left: auto; }
   .hero { align-items: flex-start; padding: 46svh 0 90px; }
   .section { padding: 80px 0; }
   .cards, .join { grid-template-columns: 1fr; }
@@ -391,3 +393,9 @@ dialog#lightbox figcaption { text-align: center; color: var(--muted); margin-top
 .game-status { color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .02em; margin-top: 2px; }
 .game-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 6px; }
 @media (max-width: 720px) { .game-grid { grid-template-columns: 1fr; } }
+@media (max-width: 420px) {
+  .nav .brand span, .nav-cta .wide { display: none; }
+  .nav-cta .narrow { display: inline; }
+  .nav-cta { gap: 6px; }
+  .nav-cta .btn-small { padding-left: 14px; padding-right: 14px; }
+}
